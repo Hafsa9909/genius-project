@@ -1,0 +1,401 @@
+{
+	"info": {
+		"_postman_id": "8c72d2e8-1529-4e73-9a26-6f4bc76e7ebc",
+		"name": "SaudiChatGPTHackathon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "completions",
+			"_postman_id": "f4adb241-5634-499c-8d5f-b6ae352ff60d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "customer-id",
+						"value": "{{Customer_ID}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{X_API_Key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"model\": \"text-davinci-003\",\n    \"prompt\": \"Say this is a test\",\n    \"max_tokens\": 7,\n    \"temperature\": 0\n}",
+					"options": {}
+				},
+				"url": "https://experimental.willow.vectara.io/v1/completions"
+			},
+			"response": []
+		},
+		{
+			"name": "chat/completions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2961b650-78f0-416a-9d5b-cb1635a5feef",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "2cd0c22a-e399-465e-bcce-a211a77920d3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "customer-id",
+						"value": "425852529"
+					},
+					{
+						"key": "x-api-key",
+						"value": "zqt_GWH-cS5Xao1a9xQg_GCr1KOaC3CywMbTJgzMyw"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"model\": \"gpt-3.5-turbo\",\n    \"messages\": [\n        {\n            \"role\": \"user\",\n            \"content\": \"Write me a fitness program based on my following personal preferences: fitness goal:fat lose, number of days: 3 times a week, equipment: mostly gym machines with somebody weight exercises as accessories, level: beginner \",\n            \"role\": \"assistant\",\n            \"content\": \"beginner fitness program , 3 days a week\\n  goal:\\n Fat lose \\nLevel:\\nBeginner\\nDay one:\\nWarm-up on the stationary bike for 5-10 minutes\\n2. Leg press machine (3 sets of 10 reps)\\n3. Seated row machine (3 sets of 10 reps)\\n4. Lat pulldown machine (3 sets of 10 reps)\\n5. Bench press machine (3 sets of 10 reps)\\n6. Standing calf raise machine (3 sets of 10 reps)\\n7. Plank (3 sets, 30 seconds each)\\n\\nDay 2:\\n1. Warm-up on the elliptical machine for 5-10 minutes\\n2. Shoulder press machine (3 sets of 10 reps)\\n3. Chest press machine (3 sets of 10 reps)\\n4. Leg curl machine (3 sets of 10 reps)\\n5. Leg extension machine (3 sets of 10 reps)\\n6. Barbell bicep curls (3 sets of 10 reps)\\n7. Tricep pushdown machine (3 sets of 10 reps)\\n\\nDay 3:\\n1. Warm-up on the treadmill for 5-10 minutes\\n2. Lat pulldown machine (3 sets of 10 reps)\\n3. Seated row machine (3 sets of 10 reps)\\n4. Chest fly machine (3 sets of 10 reps)\\n5. Assisted pull-up machine (3 sets of 10 reps)\\n6. Walking lunges (3 sets of 10 reps each leg)\\n7. Bicycle crunches (3 sets of 10 reps)\\n\\nRemember to stretch after each workout session to prevent soreness and injury. Also, make sure to adjust the weight and intensity of each machine to your specific fitness level.\",\n            \"role\":\"user\",\n            \"content\":\"Write me a fitness program based on my following personal prefrnces: fitness goal:muscle gain, number of days: 4 times a week, equipment:  gym machines , level: intermediate \"\n        }\n    ]\n}",
+					"options": {}
+				},
+				"url": "https://experimental.willow.vectara.io/v1/chat/completions"
+			},
+			"response": []
+		},
+		{
+			"name": "audio/transcriptions",
+			"_postman_id": "4388b28a-ccda-43b5-9cbd-6adc82aa0ab1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "customer-id",
+						"value": "{{Customer_ID}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{X_API_Key}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"value": null
+						},
+						{
+							"key": "model",
+							"value": "whisper-1",
+							"type": "text"
+						}
+					],
+					"options": {}
+				},
+				"url": "https://experimental.willow.vectara.io/v1/audio/transcriptions"
+			},
+			"response": []
+		},
+		{
+			"name": "audio/translations",
+			"_postman_id": "a543252c-d14d-4a20-98d4-cc5d6a51f8f9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "customer-id",
+						"value": "{{Customer_ID}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{X_API_Key}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/tallat/Downloads/Essay-Writing-in-Swedish.mp3"
+						},
+						{
+							"key": "model",
+							"value": "whisper-1",
+							"type": "text"
+						}
+					],
+					"options": {}
+				},
+				"url": "https://experimental.willow.vectara.io/v1/audio/translations"
+			},
+			"response": []
+		},
+		{
+			"name": "Gfitness Program-chat/completions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2961b650-78f0-416a-9d5b-cb1635a5feef",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "12bc67c4-3dd8-4eec-a941-08872633ec83",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "customer-id",
+						"value": "425852529"
+					},
+					{
+						"key": "x-api-key",
+						"value": "zqt_GWH-cS5Xao1a9xQg_GCr1KOaC3CywMbTJgzMyw"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"model\": \"gpt-3.5-turbo\",\n    \"messages\": [\n        {\n            \"role\": \"user\",\n            \"content\": \"Write me a fitness program based on my following personal preferences: fitness Goal:fat lose, number of days: 3 times a week, Equipment: mostly gym machines with somebody weight exercises as accessories, level: beginner \",\n            \"role\": \"assistant\",\n            \"content\": \"beginner fitness program , 3 days a week\\n  goal:\\n Fat lose \\nLevel:\\nBeginner\\nDay one:\\nWarm-up on the stationary bike for 5-10 minutes\\n2. Leg press machine (3 sets of 10 reps)\\n3. Seated row machine (3 sets of 10 reps)\\n4. Lat pulldown machine (3 sets of 10 reps)\\n5. Bench press machine (3 sets of 10 reps)\\n6. Standing calf raise machine (3 sets of 10 reps)\\n7. Plank (3 sets, 30 seconds each)\\n\\nDay 2:\\n1. Warm-up on the elliptical machine for 5-10 minutes\\n2. Shoulder press machine (3 sets of 10 reps)\\n3. Chest press machine (3 sets of 10 reps)\\n4. Leg curl machine (3 sets of 10 reps)\\n5. Leg extension machine (3 sets of 10 reps)\\n6. Barbell bicep curls (3 sets of 10 reps)\\n7. Tricep pushdown machine (3 sets of 10 reps)\\n\\nDay 3:\\n1. Warm-up on the treadmill for 5-10 minutes\\n2. Lat pulldown machine (3 sets of 10 reps)\\n3. Seated row machine (3 sets of 10 reps)\\n4. Chest fly machine (3 sets of 10 reps)\\n5. Assisted pull-up machine (3 sets of 10 reps)\\n6. Walking lunges (3 sets of 10 reps each leg)\\n7. Bicycle crunches (3 sets of 10 reps)\\n\\nRemember to stretch after each workout session to prevent soreness and injury. Also, make sure to adjust the weight and intensity of each machine to your specific fitness level.\",\n            \"role\":\"user\",\n            \"content\":\"Write me a fitness program based on my following personal prefrnces: fitness goal:muscle gain, number of days: 4 times a week, equipment:  gym machines , level: intermediate \"\n        }\n    ]\n}",
+					"options": {}
+				},
+				"url": "https://experimental.willow.vectara.io/v1/chat/completions"
+			},
+			"response": []
+		},
+		{
+			"name": "Gfitness Program-chat/completions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2961b650-78f0-416a-9d5b-cb1635a5feef",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "eb25fab6-3e07-4e3f-9e70-d0211fb847c0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "customer-id",
+						"value": "425852529"
+					},
+					{
+						"key": "x-api-key",
+						"value": "zqt_GWH-cS5Xao1a9xQg_GCr1KOaC3CywMbTJgzMyw"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"model\": \"gpt-3.5-turbo\",\n    \"messages\": [\n        {\n            \"role\": \"user\",\n            \"content\": \"Write me a fitness program based on my following personal preferences: fitness Goal:fat lose, number of days: 3 times a week, Equipment: mostly gym machines with somebody weight exercises as accessories, level: beginner \",\n            \"role\": \"assistant\",\n            \"content\": \"beginner fitness program , 3 days a week\\n  goal:\\n Fat lose \\nLevel:\\nBeginner\\nDay one:\\nWarm-up on the stationary bike for 5-10 minutes\\n2. Leg press machine (3 sets of 10 reps)\\n3. Seated row machine (3 sets of 10 reps)\\n4. Lat pulldown machine (3 sets of 10 reps)\\n5. Bench press machine (3 sets of 10 reps)\\n6. Standing calf raise machine (3 sets of 10 reps)\\n7. Plank (3 sets, 30 seconds each)\\n\\nDay 2:\\n1. Warm-up on the elliptical machine for 5-10 minutes\\n2. Shoulder press machine (3 sets of 10 reps)\\n3. Chest press machine (3 sets of 10 reps)\\n4. Leg curl machine (3 sets of 10 reps)\\n5. Leg extension machine (3 sets of 10 reps)\\n6. Barbell bicep curls (3 sets of 10 reps)\\n7. Tricep pushdown machine (3 sets of 10 reps)\\n\\nDay 3:\\n1. Warm-up on the treadmill for 5-10 minutes\\n2. Lat pulldown machine (3 sets of 10 reps)\\n3. Seated row machine (3 sets of 10 reps)\\n4. Chest fly machine (3 sets of 10 reps)\\n5. Assisted pull-up machine (3 sets of 10 reps)\\n6. Walking lunges (3 sets of 10 reps each leg)\\n7. Bicycle crunches (3 sets of 10 reps)\\n\\nRemember to stretch after each workout session to prevent soreness and injury. Also, make sure to adjust the weight and intensity of each machine to your specific fitness level.\",\n            \"role\":\"user\",\n            \"content\":\"Write me a fitness program based on my following personal prefrnces: fitness goal:muscle gain, number of days: 4 times a week, equipment:  gym machines , level: intermediate \"\n        }\n    ]\n}",
+					"options": {}
+				},
+				"url": "https://experimental.willow.vectara.io/v1/chat/completions",
+				"description": "Gerium personalized fitness programs app, that uses chatgpt and AI features to generate fitness program based on every customer needs and preferences."
+			},
+			"response": [
+				{
+					"id": "6c570c79-5798-4fc8-8333-f99d44ebb15d",
+					"name": "gpfitness example-chat/completions",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "customer-id",
+								"value": "425852529"
+							},
+							{
+								"key": "x-api-key",
+								"value": "zqt_GWH-cS5Xao1a9xQg_GCr1KOaC3CywMbTJgzMyw"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"model\": \"gpt-3.5-turbo\",\n    \"messages\": [\n        {\n            \"role\": \"user\",\n            \"content\": \"Write me a fitness program based on my following personal preferences: fitness Goal:fat lose, number of days: 3 times a week, Equipment: mostly gym machines with somebody weight exercises as accessories, level: beginner \",\n            \"role\": \"assistant\",\n            \"content\": \"beginner fitness program , 3 days a week\\n  goal:\\n Fat lose \\nLevel:\\nBeginner\\nDay one:\\nWarm-up on the stationary bike for 5-10 minutes\\n2. Leg press machine (3 sets of 10 reps)\\n3. Seated row machine (3 sets of 10 reps)\\n4. Lat pulldown machine (3 sets of 10 reps)\\n5. Bench press machine (3 sets of 10 reps)\\n6. Standing calf raise machine (3 sets of 10 reps)\\n7. Plank (3 sets, 30 seconds each)\\n\\nDay 2:\\n1. Warm-up on the elliptical machine for 5-10 minutes\\n2. Shoulder press machine (3 sets of 10 reps)\\n3. Chest press machine (3 sets of 10 reps)\\n4. Leg curl machine (3 sets of 10 reps)\\n5. Leg extension machine (3 sets of 10 reps)\\n6. Barbell bicep curls (3 sets of 10 reps)\\n7. Tricep pushdown machine (3 sets of 10 reps)\\n\\nDay 3:\\n1. Warm-up on the treadmill for 5-10 minutes\\n2. Lat pulldown machine (3 sets of 10 reps)\\n3. Seated row machine (3 sets of 10 reps)\\n4. Chest fly machine (3 sets of 10 reps)\\n5. Assisted pull-up machine (3 sets of 10 reps)\\n6. Walking lunges (3 sets of 10 reps each leg)\\n7. Bicycle crunches (3 sets of 10 reps)\\n\\nRemember to stretch after each workout session to prevent soreness and injury. Also, make sure to adjust the weight and intensity of each machine to your specific fitness level.\",\n            \"role\":\"user\",\n            \"content\":\"Write me a fitness program based on my following personal prefrnces: fitness goal:muscle gain, number of days: 4 times a week, equipment:  gym machines , level: intermediate \"\n        }\n    ]\n}",
+							"options": {}
+						},
+						"url": "https://experimental.willow.vectara.io/v1/chat/completions"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 18 Mar 2023 07:36:42 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1683"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15724800; includeSubDomains"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"id\": \"chatcmpl-6vLOz58m056T9yF3LICrO91aj2PrH\",\n    \"object\": \"chat.completion\",\n    \"created\": 1679124985,\n    \"model\": \"gpt-3.5-turbo-0301\",\n    \"usage\": {\n        \"prompt_tokens\": 48,\n        \"completion_tokens\": 428,\n        \"total_tokens\": 476\n    },\n    \"choices\": [\n        {\n            \"message\": {\n                \"role\": \"assistant\",\n                \"content\": \"\\n\\nHere is a four-day-a-week fitness program, specifically designed to help you achieve your muscle gain goals, utilizing gym machines:\\n\\nDay 1 - Chest and Triceps\\n\\n1. Incline Machine Press - 3 sets of 10 reps;\\n2. Flat Bench Machine Press - 3 sets of 10 reps;\\n3. Decline Machine Press - 3 sets of 10 reps;\\n4. Cable Tricep Pushdown - 3 sets of 12 reps;\\n5. Close-grip Bench Press - 3 sets of 10 reps.\\n\\nDay 2 - Back and Biceps\\n\\n1. Lat Pulldown - 3 sets of 10 reps;\\n2. Seated Cable Low Rows - 3 sets of 10 reps;\\n3. T-bar Row - 3 sets of 10 reps;\\n4. Barbell Bicep Curl - 3 sets of 10 reps;\\n5. Preacher Machine Curl - 3 sets of 10 reps.\\n\\nDay 3 - Legs and Shoulders\\n\\n1. Seated Leg Press - 3 sets of 10 reps;\\n2. Leg Extension - 3 sets of 10 reps;\\n3. Lying Leg Curl - 3 sets of 10 reps;\\n4. Dumbbell Shoulder Press - 3 sets of 10 reps;\\n5. Lateral Raise Machine - 3 sets of 10 reps.\\n\\nDay 4 - Full-Body Workout\\n\\n1. Seated Cable Rows - 3 sets of 10 reps;\\n2. Lat Pulldown - 3 sets of 10 reps;\\n3. Squat Machine - 3 sets of 10 reps;\\n4. Chest Press - 3 sets of 10 reps;\\n5. Tricep Pushdown - 3 sets of 10 reps;\\n6. Barbell Curl - 3 sets of 10 reps;\\n7. Leg Press - 3 sets of 10 reps.\\n\\nNote: Before beginning any exercise program, it's important to speak with your doctor or a certified personal trainer. Also, gradually work up to heavy weights and new exercises to avoid injury.\"\n            },\n            \"finish_reason\": \"stop\",\n            \"index\": 0\n        }\n    ]\n}"
+				},
+				{
+					"id": "117965f9-c305-4e1c-a456-faca2044d8f6",
+					"name": "gpfitness example-chat/completions",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "customer-id",
+								"value": "425852529"
+							},
+							{
+								"key": "x-api-key",
+								"value": "zqt_GWH-cS5Xao1a9xQg_GCr1KOaC3CywMbTJgzMyw"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"model\": \"gpt-3.5-turbo\",\n    \"messages\": [\n        {\n            \"role\": \"user\",\n            \"content\": \"Write me a fitness program based on my following personal preferences: fitness Goal:fat lose, number of days: 3 times a week, Equipment: mostly gym machines with somebody weight exercises as accessories, level: beginner \",\n            \"role\": \"assistant\",\n            \"content\": \"beginner fitness program , 3 days a week\\n  goal:\\n Fat lose \\nLevel:\\nBeginner\\nDay one:\\nWarm-up on the stationary bike for 5-10 minutes\\n2. Leg press machine (3 sets of 10 reps)\\n3. Seated row machine (3 sets of 10 reps)\\n4. Lat pulldown machine (3 sets of 10 reps)\\n5. Bench press machine (3 sets of 10 reps)\\n6. Standing calf raise machine (3 sets of 10 reps)\\n7. Plank (3 sets, 30 seconds each)\\n\\nDay 2:\\n1. Warm-up on the elliptical machine for 5-10 minutes\\n2. Shoulder press machine (3 sets of 10 reps)\\n3. Chest press machine (3 sets of 10 reps)\\n4. Leg curl machine (3 sets of 10 reps)\\n5. Leg extension machine (3 sets of 10 reps)\\n6. Barbell bicep curls (3 sets of 10 reps)\\n7. Tricep pushdown machine (3 sets of 10 reps)\\n\\nDay 3:\\n1. Warm-up on the treadmill for 5-10 minutes\\n2. Lat pulldown machine (3 sets of 10 reps)\\n3. Seated row machine (3 sets of 10 reps)\\n4. Chest fly machine (3 sets of 10 reps)\\n5. Assisted pull-up machine (3 sets of 10 reps)\\n6. Walking lunges (3 sets of 10 reps each leg)\\n7. Bicycle crunches (3 sets of 10 reps)\\n\\nRemember to stretch after each workout session to prevent soreness and injury. Also, make sure to adjust the weight and intensity of each machine to your specific fitness level.\",\n            \"role\":\"user\",\n            \"content\":\"Write me a fitness program based on my following personal prefrnces: fitness goal:muscle gain, number of days: 4 times a week, equipment:  gym machines , level: intermediate \"\n        }\n    ]\n}",
+							"options": {}
+						},
+						"url": "https://experimental.willow.vectara.io/v1/chat/completions"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 18 Mar 2023 07:36:42 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1683"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15724800; includeSubDomains"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"id\": \"chatcmpl-6vLOz58m056T9yF3LICrO91aj2PrH\",\n    \"object\": \"chat.completion\",\n    \"created\": 1679124985,\n    \"model\": \"gpt-3.5-turbo-0301\",\n    \"usage\": {\n        \"prompt_tokens\": 48,\n        \"completion_tokens\": 428,\n        \"total_tokens\": 476\n    },\n    \"choices\": [\n        {\n            \"message\": {\n                \"role\": \"assistant\",\n                \"content\": \"\\n\\nHere is a four-day-a-week fitness program, specifically designed to help you achieve your muscle gain goals, utilizing gym machines:\\n\\nDay 1 - Chest and Triceps\\n\\n1. Incline Machine Press - 3 sets of 10 reps;\\n2. Flat Bench Machine Press - 3 sets of 10 reps;\\n3. Decline Machine Press - 3 sets of 10 reps;\\n4. Cable Tricep Pushdown - 3 sets of 12 reps;\\n5. Close-grip Bench Press - 3 sets of 10 reps.\\n\\nDay 2 - Back and Biceps\\n\\n1. Lat Pulldown - 3 sets of 10 reps;\\n2. Seated Cable Low Rows - 3 sets of 10 reps;\\n3. T-bar Row - 3 sets of 10 reps;\\n4. Barbell Bicep Curl - 3 sets of 10 reps;\\n5. Preacher Machine Curl - 3 sets of 10 reps.\\n\\nDay 3 - Legs and Shoulders\\n\\n1. Seated Leg Press - 3 sets of 10 reps;\\n2. Leg Extension - 3 sets of 10 reps;\\n3. Lying Leg Curl - 3 sets of 10 reps;\\n4. Dumbbell Shoulder Press - 3 sets of 10 reps;\\n5. Lateral Raise Machine - 3 sets of 10 reps.\\n\\nDay 4 - Full-Body Workout\\n\\n1. Seated Cable Rows - 3 sets of 10 reps;\\n2. Lat Pulldown - 3 sets of 10 reps;\\n3. Squat Machine - 3 sets of 10 reps;\\n4. Chest Press - 3 sets of 10 reps;\\n5. Tricep Pushdown - 3 sets of 10 reps;\\n6. Barbell Curl - 3 sets of 10 reps;\\n7. Leg Press - 3 sets of 10 reps.\\n\\nNote: Before beginning any exercise program, it's important to speak with your doctor or a certified personal trainer. Also, gradually work up to heavy weights and new exercises to avoid injury.\"\n            },\n            \"finish_reason\": \"stop\",\n            \"index\": 0\n        }\n    ]\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				],
+				"id": "76049ff3-8449-48c3-9458-72cb07c848db"
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				],
+				"id": "97b9daaa-4c84-44ad-8094-3f6afa540883"
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "2043263e-e52e-4edb-80bb-016b5cfb1523",
+			"key": "Customer_ID",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "09a3feef-3fe8-4f3a-a103-5378c4ecacef",
+			"key": "X_API_Key",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
